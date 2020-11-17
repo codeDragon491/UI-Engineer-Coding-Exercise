@@ -15,7 +15,27 @@
 </head>
 
 <body>
+    <div id="game-page">
+        <h3>Shuffle and Sort</h3>
+        <div id="game-container">
+            <div id="game-actions">
+                <button class="button" type="button" id="shuffle-button">SHUFFLE</button>
+                <button class="button" type="button" id="sort-button">SORT</button>
+            </div>
+            <div id="cards-container">
+            </div>
+        </div>
+        <p>Shuffle and sort by Julia Tefas</p>
+    </div>
     <script type="text/javascript">
+        const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const cardContainer = document.getElementById("cards-container");
+        cards.forEach(function(card) {
+            let cardElement = document.createElement('div');
+            cardElement.classList.add("card");
+            cardElement.innerHTML = card;
+            cardContainer.appendChild(cardElement);
+        })
     </script>
 </body>
 
