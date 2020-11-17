@@ -91,6 +91,66 @@
             text-align: center;
             font-size: 0.85rem;
         }
+        
+        @media screen and (min-width: 960px) {
+            #game-page {
+                min-height: 100vh;
+                background-color: #EFEFEF;
+            }
+            h2 {
+                text-align: center;
+                background-color: white;
+                color: #000000;
+                font-weight: normal;
+            }
+            #game-container {
+                border-top: 5px solid #BFBFBF;
+                grid-auto-flow: column;
+                grid-template-columns: 75% 25%;
+            }
+            #game-actions {
+                grid-column-start: 2;
+                width: 100%;
+            }
+            #cards-container {
+                width: 100%;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .card {
+                width: 33.333%;
+                height: 25vh;
+                line-height: 25vh;
+                color: #FFFFFF;
+                font-size: 8rem;
+                margin: 0;
+            }
+            .card:nth-of-type(n+1) {
+                border-left: none;
+            }
+            .card:nth-of-type(even) {
+                background-color: #2B8EAD;
+            }
+            .card:nth-child(n+6) {
+                background-color: #BFBFBF;
+            }
+            .card:nth-child(6n+3),
+            .card:nth-child(5) {
+                background-color: #2F454E;
+            }
+            .card:nth-child(7n+1) {
+                background-color: #6F98A8;
+            }
+            .button {
+                display: block;
+                margin: 1.5rem auto;
+                width: 67%;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 
