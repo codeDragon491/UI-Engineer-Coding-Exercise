@@ -4,7 +4,8 @@
 <head>
     <title>Maersk | UI Engineer Coding Exercise</title>
     <meta charset="UTF-8">
-    <meta name="description" content="A.P. Moller - Maersk is an integrated logistics company. We go all the way to connect and simplify global trade for a growing world">
+    <meta name="description"
+        content="A.P. Moller - Maersk is an integrated logistics company. We go all the way to connect and simplify global trade for a growing world">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
             box-sizing: border-box;
             margin: 0;
         }
-        
+
         h2 {
             text-align: center;
             background-color: #333333;
@@ -24,20 +25,20 @@
             padding: 0.5rem 0;
             font-weight: 300;
         }
-        
+
         #game-container {
             display: grid;
             justify-items: center;
         }
-        
+
         #game-actions {
             margin: 0.5rem 0 0;
         }
-        
+
         #game-actions:focus {
             outline: none;
         }
-        
+
         .button {
             background-color: #72C3DC;
             color: white;
@@ -47,76 +48,81 @@
             border-radius: 10px;
             box-shadow: 0px 4px 0px #2B8EAD;
         }
-        
+
         .button:hover {
             background-color: #80c9df;
         }
-        
+
         .button:focus {
             outline: none;
         }
-        
+
         #cards-container {
             margin: 1rem 0 0;
             width: 90%;
             text-align: center;
         }
-        
+
         .card {
             background-color: #EFEFEF;
             margin-bottom: 0.25rem;
             padding: 1rem 0;
             font-size: 1.125rem;
         }
-        
+
         .card:nth-of-type(even) {
             border-left: 8px solid #2B8EAD;
         }
-        
+
         .card:nth-child(n+6) {
             border-left: 8px solid #BFBFBF;
         }
-        
+
         .card:nth-child(6n+3),
         .card:nth-child(5) {
             border-left: 8px solid #2F454E;
         }
-        
+
         .card:nth-child(7n+1) {
             border-left: 8px solid #6F98A8;
         }
-        
+
         p {
             font-style: italic;
             text-align: center;
             font-size: 0.85rem;
         }
-        
+
         @media screen and (min-width: 960px) {
             #game-page {
                 min-height: 100vh;
                 background-color: #EFEFEF;
             }
+
             h2 {
                 background-color: white;
                 color: #000000;
                 font-weight: normal;
             }
+
             #game-container {
                 border-top: 5px solid #BFBFBF;
                 grid-auto-flow: column;
                 grid-template-columns: 75% 25%;
             }
+
             #game-actions {
                 grid-column-start: 2;
                 width: 100%;
             }
+
             #cards-container {
                 width: 100%;
                 margin: 0;
                 display: flex;
                 flex-wrap: wrap;
             }
+
             .card {
                 width: 33.333%;
                 height: 25vh;
@@ -125,27 +131,34 @@
                 font-size: 8rem;
                 margin: 0;
             }
+
             .card:nth-of-type(n+1) {
                 border-left: none;
             }
+
             .card:nth-of-type(even) {
                 background-color: #2B8EAD;
             }
+
             .card:nth-child(n+6) {
                 background-color: #BFBFBF;
             }
+
             .card:nth-child(6n+3),
             .card:nth-child(5) {
                 background-color: #2F454E;
             }
+
             .card:nth-child(7n+1) {
                 background-color: #6F98A8;
             }
+
             .button {
                 display: block;
                 margin: 1.5rem auto;
                 width: 67%;
             }
+
             p {
                 font-size: 1rem;
             }
@@ -179,21 +192,22 @@
             cardContainer.appendChild(cardElement);
         })
 
-        shuffleButton.addEventListener("click", function() {
+        shuffleButton.addEventListener("click", function () {
             let shuffledCards = cards.sort((a, b) => 0.5 - Math.random());
-            let oldCards = document.querySelectorAll(".card");
-            for (let i = 0; i < oldCards.length; i++) {
-                oldCards[i].innerHTML = shuffledCards[i];
-            }
+            swapCards(shuffledCards)
         })
 
-        sortButton.addEventListener("click", function() {
+        sortButton.addEventListener("click", function () {
             let ascendingCards = cards.sort((a, b) => a - b);
+            swapCards(ascendingCards)
+        })
+
+        function swapCards(swapedCards) {
             let oldCards = document.querySelectorAll(".card");
             for (let i = 0; i < oldCards.length; i++) {
-                oldCards[i].innerHTML = ascendingCards[i];
+                oldCards[i].innerHTML = swapedCards[i];
             }
-        })
+        }
     </script>
 </body>
 
